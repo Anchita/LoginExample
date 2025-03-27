@@ -17,7 +17,7 @@ export class LoginPage{
     }
 
     async fillEmail(email: string){
-        await this.emailInput.fill('anchita.dogra@gmail.com');
+        await this.emailInput.fill(email);
     }
 
     async clickContinueButton(){
@@ -29,7 +29,7 @@ export class LoginPage{
     }
 
     async fillPassword(password: string){
-        await this.passwordInput.fill('Pass123!');
+        await this.passwordInput.fill(password);
     }
 
     async doLogin(email: string, password: string){
