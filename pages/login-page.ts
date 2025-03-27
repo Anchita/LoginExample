@@ -7,6 +7,7 @@ export class LoginPage{
     readonly continueButton: Locator;
     readonly continue: Locator;
     readonly invalidUserError: Locator;
+    readonly invalidPasswordError: Locator;
 
     constructor(page: Page){
         this.page = page;
@@ -15,6 +16,7 @@ export class LoginPage{
         this.passwordInput = page.getByRole('textbox', { name: 'Password' });
         this.continue = page.getByRole('button', { name: 'Continue'});
         this.invalidUserError = page.getByText('Enter a valid email');
+        this.invalidPasswordError = page.getByText('Your email or password is incorrect. Try again.');
     }
 
     async fillEmail(email: string){
@@ -52,6 +54,10 @@ export class LoginPage{
 
     async verifyInvalidUserLogin(){
         await expect(this.invalidUserError).toBeVisible();
+    }
+
+    async verifyInvalidPassword(){
+        await expect(this.invalidPasswordError).toBeVisible();
     }
 }
 

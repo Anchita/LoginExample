@@ -7,6 +7,7 @@ let loginPage: LoginPage;
 const password = process.env.PASSWORD!;
 const username = process.env.USERNAME!;
 const invalidUser = userData.INVALID_USER;
+const invalidPassword = userData.INVALID_PASSWORD;
 
 test.beforeEach(async ({ page }) => {
     await page.goto('./login');
@@ -19,8 +20,13 @@ test.beforeEach(async ({ page }) => {
       await loginPage.verifyLogin(); 
     });
 
-    test(`unsuccessful login`, async () => {
+    test(`unsuccessful login -invalid user email`, async () => {
       await loginPage.loginWithInvalidUser(invalidUser);
       await loginPage.verifyInvalidUserLogin(); 
+    });  
+
+    test(`unsuccessful login -invalid password`, async () => {
+      await loginPage.doLogin(username, invalidPassword);
+      await loginPage.verifyInvalidPassword(); 
     });  
   });
