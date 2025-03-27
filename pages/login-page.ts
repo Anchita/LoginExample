@@ -6,6 +6,7 @@ export class LoginPage{
     readonly passwordInput: Locator;
     readonly continueButton: Locator;
     readonly continue: Locator;
+    readonly invalidUserError: Locator;
 
     constructor(page: Page){
         this.page = page;
@@ -13,7 +14,7 @@ export class LoginPage{
         this.continueButton = page.getByRole('button', { name: 'Continue', exact: true });
         this.passwordInput = page.getByRole('textbox', { name: 'Password' });
         this.continue = page.getByRole('button', { name: 'Continue'});
-
+        this.invalidUserError = page.getByText('Enter a valid email');
     }
 
     async fillEmail(email: string){
@@ -39,9 +40,18 @@ export class LoginPage{
         await this.clickContinue();
     }
 
+    async loginWithInvalidUser(email: string){
+        await this.fillEmail(email);
+        await this.clickContinueButton();
+    }
+
     async verifyLogin(){
         //await expect(this.page.url()).toBe('https://hudl.com./home');
         await expect(this.page).toHaveTitle(/Home - Hudl/);
+    }
+
+    async verifyInvalidUserLogin(){
+        await expect(this.invalidUserError).toBeVisible();
     }
 }
 
