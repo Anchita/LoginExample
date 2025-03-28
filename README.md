@@ -8,13 +8,13 @@ Browsers tested are - Chrome, Firefox and Webkit
 
 ## Viewing test report and captured video on Github Actions 
 
-- Navigate to [Github Actions](https://github.com/Anchita/LoginExample/actions/runs/14111094536) and download the 'playwright-report'
+- Navigate to [Github Actions](https://github.com/Anchita/LoginExample/actions/runs/14127033647) and download the 'playwright-report'
 
 - On your terminal, navigate to the folder where you saved the report and type:
 
 `npx playwright show-report playwright-report`
 
-- The above command opens an html report in your browser. You can view the captured video of any test by scrolling down to the video and hitting play.
+- The above command opens an html report in your browser. You can view the captured video of any test by scrolling down to the bottom to the video and hitting play.
 
 ## Running the tests locally
 
