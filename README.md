@@ -6,7 +6,7 @@ This projects tests the Hudl login using Playwright for following scenarios:
 
 Browsers tested are - Chrome, Firefox and Webkit
 
-## Viewing test report and captured video on Github Action 
+## Viewing test report and captured video on Github Actions 
 
 - Navigate to [Github Actions](https://github.com/Anchita/LoginExample/actions/runs/14111094536) and download the 'playwright-report'
 
@@ -15,6 +15,8 @@ Browsers tested are - Chrome, Firefox and Webkit
 `npx playwright show-report playwright-report`
 
 - The above command opens an html report in your browser. You can view the captured video of any test by scrolling down to the video and hitting play.
+
+## Running the tests locally
 
 ## Dependencies
 
@@ -25,7 +27,7 @@ Browsers tested are - Chrome, Firefox and Webkit
 
 > Pre requirements: 
 - [Node setup](https://nodejs.org/en/download)
-- [VS code setup](https://code.visualstudio.com/download)
+- An IDE, e.g. [VS code setup](https://code.visualstudio.com/download)
 - [Playwright setup](https://playwright.dev/docs/intro)
 
 ## Clone the project
@@ -41,6 +43,10 @@ On your terminal, type:
 This intsalls the required module for using env variables stored securely in Github
 
 ## Create your own version of .env file using the .env.example file
+
+1. Rename the .env.example file to .env
+
+2. Add a valid username and password
 
 ## Run the tests
 
